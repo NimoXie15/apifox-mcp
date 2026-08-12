@@ -49,7 +49,7 @@ venv/bin/pip install -r requirements.txt       # Linux/macOS
 | `APIFOX_TOKEN` | Apifox 开放 API Token（登录 Apifox 后获取） |
 | `APIFOX_PROJECT_ID` | 项目 ID |
 | `APIFOX_MODULE_ID` | 目标模块 ID（配置后按模块动态读取/写入） |
-| `PYTHONPATH` | 指向本仓库根目录绝对路径（如 `D:\files\apifox-mcp`） |
+| `PYTHONPATH` | 指向本仓库根目录的绝对路径（clone 后所在目录，不限定盘符，如 `<仓库根目录>`） |
 
 ### 3. 注册 MCP 服务器
 

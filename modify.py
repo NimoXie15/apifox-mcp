@@ -2,7 +2,8 @@
 """apifox_mcp 改造脚本：加模块 ID 支持 + 全部 export_payload 替换为 _build_export_payload()"""
 import pathlib
 
-BASE = pathlib.Path(r"D:\files\apifox-mcp\src")
+# 脚本位于仓库根目录，src 为其子目录；由脚本位置自动推导，任何设备 clone 后无需修改
+BASE = pathlib.Path(__file__).resolve().parent / "src"
 
 
 def replace_payload_blocks(text: str) -> tuple[str, int]:

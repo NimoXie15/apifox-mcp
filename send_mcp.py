@@ -2,18 +2,21 @@
 """MCP 服务器 JSON-RPC 验证脚本：initialize → tools/list → tools/call list_api_endpoints"""
 import json
 import os
+import pathlib
 import queue
 import subprocess
 import sys
 import threading
 
-CMD = r"D:\files\apifox-mcp\venv\Scripts\python.exe"
+# 脚本位于仓库根目录，以下路径由脚本位置自动推导，任何设备 clone 后无需修改
+REPO_ROOT = pathlib.Path(__file__).resolve().parent
+CMD = str(REPO_ROOT / "venv" / "Scripts" / "python.exe")
 ENV = os.environ.copy()
 ENV.update({
     "APIFOX_TOKEN": os.environ.get("APIFOX_TOKEN", ""),      # 从环境变量读取，勿硬编码（防提交泄露）
     "APIFOX_PROJECT_ID": os.environ.get("APIFOX_PROJECT_ID", ""),  # 同上
     "APIFOX_MODULE_ID": os.environ.get("APIFOX_MODULE_ID", ""),    # 同上
-    "PYTHONPATH": r"D:\files\apifox-mcp",
+    "PYTHONPATH": str(REPO_ROOT),
 })
 missing = [k for k in ("APIFOX_TOKEN", "APIFOX_PROJECT_ID", "APIFOX_MODULE_ID") if not ENV[k]]
 if missing:
