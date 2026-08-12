@@ -1,0 +1,16 @@
+# 虚拟环境（103M，含本机路径，不提交）
+venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 克隆的原始仓库（他人可自行 clone，不提交）
+repo/
+
+# 敏感配置（含 APIFOX_TOKEN，严禁提交）
+*.env
+.zcode/
+
+# 上游原版对照文件（.old 后缀，仅本地参考，不上传）
+*.old
